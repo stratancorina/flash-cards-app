@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Single+Day&display=swap" rel="stylesheet">
+    <title>Flash Cards App</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div id="header">
+          <div class="header-inside">
+            <div class="buttons-container">
+             <img src="Hands - Folder.png" width="auto" height="40px"/>
+              <h1>Flashcards</h1>             
+            </div>
+              <div class="buttons-container">
+                <button id="show_card_box">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" width="20px" height="20px" viewBox="0 0 24 24" aria-labelledby="cardsIconTitle" stroke="#f9547b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#2329D6"> <title id="cardsIconTitle">Cards</title> <rect width="13" height="13" x="3" y="3"/> <polyline points="16 8 21 8 21 21 8 21 8 16"/> </svg>
+                  <span>
+                    Add Card
+                  </span></button>
+                <button id="delete_cards" class="secondary">
+                  <svg role="img" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" aria-labelledby="binIconTitle" stroke="#f9547b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#2329D6"> <title id="binIconTitle">Bin</title> <path d="M19 6L5 6M14 5L10 5M6 10L6 20C6 20.6666667 6.33333333 21 7 21 7.66666667 21 11 21 17 21 17.6666667 21 18 20.6666667 18 20 18 19.3333333 18 16 18 10"/> </svg>
+                  <span>
+                    Delete all cards
+                  </span></button>
+              </div>
+
+            </div>
+        </div>
+      </header>
+        <div class="modal" id="modal">
+          <div id="create_card" class="modal-content">
+            <div class="modal-header">
+              <h2>Create Flashcard</h2>
+              <button id="close_card_box" class="tertiary">
+                <svg role="img" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" aria-labelledby="cancelIconTitle" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="inherit"> <title id="cancelIconTitle">Cancel</title> <path d="M15.5355339 15.5355339L8.46446609 8.46446609M15.5355339 8.46446609L8.46446609 15.5355339"/> <path d="M4.92893219,19.0710678 C1.02368927,15.1658249 1.02368927,8.83417511 4.92893219,4.92893219 C8.83417511,1.02368927 15.1658249,1.02368927 19.0710678,4.92893219 C22.9763107,8.83417511 22.9763107,15.1658249 19.0710678,19.0710678 C15.1658249,22.9763107 8.83417511,22.9763107 4.92893219,19.0710678 Z"/> </svg>
+              </button>
+
+            </div>
+            <div class="modal-body">
+              <div class="input-container">
+                <label for="question">Question</label>
+                <textarea id="question" maxlength="280"></textarea>
+              </div>
+              <div class="input-container">
+                <label for="answer" maxlength="280">Answer</label>
+                <textarea id="answer"></textarea>
+              </div>
+              <div></div>
+            </div>
+            <div class="modal-footer">
+              <div class="buttons-container">
+
+                <button id="save_card">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <section id="main-content">       
+        <div class="container">
+          <div id="flashcards"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

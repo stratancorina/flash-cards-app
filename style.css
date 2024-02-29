@@ -1,0 +1,321 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+
+}
+
+body {
+  font-size: 1rem;
+  background: #f5f5f1;
+  color: #1f1f1e;
+
+}
+
+button {
+  padding: 8px 20px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: #f6e774;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+button svg {
+  stroke: #1c1a12;
+}
+
+button:hover {
+  background: #1c1a12;
+  color: #f6e774;
+  transition: background-color 200ms ease 0ms,box-shadow 200ms ease 0ms, border 200ms ease 0ms,color 200ms ease 0ms;
+}
+
+button:hover svg {
+  stroke: #f6e774;
+}
+
+.secondary {
+  background-color: #f5f5f1;
+}
+
+.secondary:hover {
+  color: #f5f5f1;
+}
+
+.secondary:hover svg {
+  stroke: #f5f5f1;
+}
+
+.tertiary {
+  padding: 0;
+  background: transparent;
+}
+
+.tertiary:hover {
+  background: transparent;
+}
+
+.background-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+#header {
+  background-color: #19b4c3;
+}
+
+.header-inside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  padding: 0 20px;
+  color: #1f1f1e;
+  width: 80%;
+  margin: auto;
+}
+
+.header-inside h1 {
+  font-family: "Single Day", cursive;
+  color: #1c1a12;
+  font-size: 39px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#create_card h2 {
+  text-align: center;
+}
+
+#create_card textarea {
+  width: 100%;
+  border-radius: 5px;
+  font-family: inherit;
+  border: 1px solid lightgray;
+  resize: none;
+  padding: 5px;
+
+}
+
+#flashcards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0px 10px;
+}
+
+.flashcard {
+  width: 370px;
+  height: 200px;
+  word-wrap: break-word;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 2px 6px 8px 0px rgb(213 213 213 / 90%);
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+.flashcard:hover{
+  box-shadow: 2px 6px 11px 2px rgb(201 201 201 / 90%);
+}
+
+.question{
+  border: 5px solid #19b4c3;
+  border-radius: 10px;
+  transition: background-color 200ms ease 0ms,box-shadow 200ms ease 0ms, border 200ms ease 0ms,color 200ms ease 0ms;
+}
+
+.answer{
+  border: 5px solid #f6e774;
+  border-radius: 10px;
+  transition: background-color 200ms ease 0ms,box-shadow 200ms ease 0ms, border 200ms ease 0ms,color 200ms ease 0ms;
+}
+.question:hover::after{
+  content: "Show the answer";
+  color: #19b4c3;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: background-color 200ms ease 0ms,box-shadow 200ms ease 0ms, border 200ms ease 0ms,color 200ms ease 0ms;
+}
+.answer:hover::after{
+  content: "Hide the answer";
+  color: #d3c029;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: background-color 200ms ease 0ms,box-shadow 200ms ease 0ms, border 200ms ease 0ms,color 200ms ease 0ms;
+}
+
+.flashcard div {
+  font-size: 1rem;
+  padding: 6px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 4;
+}
+
+
+.delete-btn{
+  bottom: 3%;
+  right: 2%;
+  position: absolute;
+  color: #1a1a1a;
+  transition: 0.3s ease-out;
+}
+
+.fa-minus:hover{color: red;}
+
+@media(max-width:1280px) {
+  .container {
+    width: 100%;
+  }
+  .header-inside {
+    width: 100%;
+  }
+}
+
+@media(max-width:768px) {
+  .flashcard {
+    margin: auto;
+  }
+
+
+  .flashcard {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .header-inside {
+    flex-direction: column;
+    padding: 20px;
+    gap: 5px;
+
+  }
+
+}
+
+@media(max-width:480px) {
+  #header {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #create_card {
+    width: 95%;
+  }
+
+  .flashcard {
+    width: 100%;
+  }
+
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  /* color: black; */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 600px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+
+.modal-body {
+  padding: 16px 24px;
+  min-height: 300px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.modal-footer,
+.modal-header {
+  padding: 16px 24px;
+  background-color: #5dccd6;
+  color: #0b0b0b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
